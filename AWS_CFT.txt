@@ -1,0 +1,67 @@
+AWS Cloud Formation Template(CFT):-
+	CFT is a service provided by aws which basically used to create infrastructure in AWS.
+	* Implement the principles of IAC.
+	* Infrastructure as Code refers to the practice of managing and provisioning computing infrastructure through machine-readable script files, rather than through physical hardware configuration or interactive configuration tools.
+	* CFT supports only JSON or YAML Templates.
+	User sends any of the template to AWS Cft which is a service on AWS. Then Cft converts these templates into API.
+
+  Difference Between CLI CFT:-
+	CLI					CFT
+	* Short or Quick actions		* To create more Resources
+	* ex:- Listing S3 buckets		* Create 10 Instances
+	* is a set of command-line tools	* is a service that allows you to 
+	  provided by AWS for interacting 	  define and provision AWS infrastructure 
+	  with AWS services.			  as code using templates.
+
+  Features of CFT:-
+	* Creating Infrastructure
+	* Drift Detection
+	   refers to the process of identifying changes or deviations in data over time.
+
+ Steps: using UI:-
+	* Create Yaml template .
+	* Login to AWS Console.
+	* Search for CFT.
+	* Create Stack. - Upload the Created YAML template
+
+ CFT Structure:-
+	Yaml File:-
+
+	AWSTemplateFormatVersion: "version_date"
+	Description: "Description of your CloudFormation Template"
+
+	Parameters:
+  	  # Define input parameters here
+
+	Resources:
+          # Define AWS resources and their properties here
+
+	Outputs:
+       	  # Define outputs that you want to display after the stack creation
+
+  Example to create EC2 Instances:-
+
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Simple EC2 Instance"
+Parameters:
+  InstanceTypeParameter:
+    Type: String
+    Default: "t2.micro"
+Resources:
+  MyEC2Instance:
+    Type: "AWS::EC2::Instance"
+    Properties:
+      ImageId: "ami-0c55b159cbfafe1f0"
+      InstanceType: !Ref "InstanceTypeParameter"
+Outputs:
+  InstanceId:
+    Description: "ID of the EC2 instance"
+    Value: !Ref "MyEC2Instance"
+
+  Example to create S3 Bucket:-
+
+Resources:
+  S3Bucket:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      BucketName: "s3.sangamesh.demoname.com"

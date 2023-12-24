@@ -1,0 +1,36 @@
+AWS STORAGE:-
+	referes to the cloud storage services provided by AWS.
+These services offer scalable, durable, and secure storage solutions for businesses and individuals,from simple file storage to complex data analytics and
+machine learning workloads
+   Some AWS Storage Services:-
+	1) Amazon Elastic Block Store  (Volume).
+		ex: Hosting OS, Databases, Low Latency data access.
+	2) Amazon Simple Storage Services (Bucket).
+		ex: Social Media Images/Videos, Hosting static website.
+	3) Amazon ELastic File System (File System).
+		ex: Distibuted Computing.
+	4) Amazon FSx For Windows (File System).
+
+  1) Amazon EBS:- The Storage which is local to the ec2-instances is called ebs.
+		* Data is Stored into Unique Blocks.
+		* Must be attached to EC2.
+		* ex:- Unix ZFS, Ext4
+	Use-Cases:-
+		* Block level storage for instances- suitable for applications which are low latency, high performance
+
+  2) Amazon S3:- The Storage which is access over the Internet is called Amazon S3.
+		* Object storage = Flat stucture.
+		* Api access to data(HTTP/HTTPS).
+		* Metadata driven(Attributes,Policy).
+	Use-Cases:-
+		* Object storage for Web Application : used to store videos, images files.
+		* Backup abd Archiving : S3 is well suited for long term storage and backuf of data.
+
+  3) Amazon EFS:- The Storage which is shared between the multiple ec2-instances is called EFS.
+		* Shared File System = Hierarchical structure means one efs storage can  be used more than one instances.
+		* Comes with serving File System using protocols like NFS, Smb.
+		* Should be mounted on ec2 or on premises servers.
+	Use-Cases:-
+		* Shared File Storage for instances: Efs provides scalable and fully managed file system taht can be shared accross multiple instances.
+		* Data Storage for Containers: EFS used with containerised applications, allowing multiple containers to share access to same file system.
+
