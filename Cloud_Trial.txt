@@ -1,0 +1,31 @@
+CLOUD TRIAL:-
+ It is a service provided by Amazon Web Services (AWS). AWS CloudTrail records and tracks API calls made on your AWS account,
+   providing visibility into user activity, resource changes, and system events.
+
+  Features Of CloutTrial:- 
+	* Multi Regional
+	* Event History
+	* File Encryption
+	* File Integrity
+
+  Limitations :-
+	* Trial limited to 5 per region.
+	* 2 Transactions per second.
+	* Event Selectors limited to 5 per trial.
+	* Event size is limited(256kb).
+
+  Purpose of CloudTrial:-
+	Which serves the purpose of monitoring and logging AWS account activity.
+	
+  Steps to create CLoudTrial on AWS:-
+	* Login to the AWS Console.
+	* Navigate to the AWS CloudTrial.
+	* Create New Trial.
+		- Provide Name for Trial.
+		- Choose option to create s3 bucket for storing CloudTrial logs or Select existing bucket.
+		- nable log files encryption with AWS KMS.
+		- Click " Create " to create the trial.
+		- Status should look "Logging".
+	* Set-up CloudWatch Alarms(Optional).
+                  Example:-  If we start an instance, In CLoudTrial Event History in Event Name displays "StartInstances" along with time, Uname etc.
+		  Example:-  If we stop an instance, In CLoudTrial Event History in Event Name displays "StopInstances" along with time, Uname etc.

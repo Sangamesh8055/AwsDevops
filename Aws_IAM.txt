@@ -1,0 +1,12 @@
+AWS IAM:- Identity And Access Management
+	 It allows you to manage access to AWS services and resources securely.
+	 IAM enables you to control who can do what in your AWS environment.
+
+  Here are some key concepts related to IAM in AWS:
+
+	* Users: Represent individual AWS accounts. Each user has unique security credentials.
+	* Groups: A collection of IAM users. Policies are attached to groups to grant permissions.
+	* Roles: Similar to users but are not associated with a specific person. Roles are often assumed by users, applications, or AWS services.
+	* Policies: Documents that define permissions. They can be attached to users, groups, or roles.
+	* Permissions: The rules that define what actions are allowed or denied on AWS resources.
+	* Access Key: Consists of an access key ID and a secret access key. Used for programmatic access to AWS.

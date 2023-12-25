@@ -1,0 +1,20 @@
+JENKINS:- 
+	Jenkins is an Open-source Automation platform which is used to build, test, deploy using Pipelines.
+
+ Jenkins Infrastructure:-
+	1) Master server-
+	   * Controls pipelines.
+	   * Schedules builds.
+	2) Agents/Minions-
+	   * Perform the build
+
+  Agents Types:-
+	* Cloud Agents:- Docker, Kubernetes.
+	* Build Types:- FreeStyle, Pipeline.
+
+ Differnece between Freestyle and Pipeline:-
+	FreeStyle			Pipeline
+	* Simple method to		* Use Groovy Script
+	  create a build		
+	* Feels like Shell Scripting	* Use stages to break-down Components
+					  of builds

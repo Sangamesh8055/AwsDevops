@@ -1,0 +1,24 @@
+PostgresSQL:- 
+	IS an open-source object-oriented database management system. It allows you to store,
+        process and retrieve data safely. It was developed by a worldwide of Volunteers.
+
+  Features Of PostgresSQl:-
+	* Free to download.
+	* Supports various operating systems.
+	* Highly secure and reliable.
+	* Compatible with several data types.
+	* Supports Multiversion concurrency control (MVCC).
+
+  Some PostgresSQL Commands:-
+	* Select 			* Is null
+	* Update			* Like operator
+	* Delete			* Logical operators
+	* Where clause			* Built-in Functions
+	* Group by			* Case Statement
+	* Having			* Subquery
+	* Order by			* User defined functions
+
+* select version();     	-To check the db version.
+* \l				-To list db names
+* create database sql_demo      -To create db
+* \c sql_demo     		-To connect to db 
