@@ -1,0 +1,101 @@
+CONTAINER: DOCKER-                                                                                                                                                                                                                       
+	Container:-  lightweight, standalone, and executable software package that includes
+		      everything needed to run a piece of software, including the code, runtime, 
+		      libraries, and system tools.
+
+  Containers are bundle of Applications, where Application libraries requires to run Application and some minimum dependency.
+ 
+ Difference Between Containers and Virtual Machines.
+
+1. Resource Utilization:   Containers share the host operating system kernel, making them lighter and faster than VMs.               
+				VMs have a full-fledged OS and hypervisor, making them more resource-intensive.
+
+2. Portability:            Containers are designed to be portable and can run on any system with a compatible host operating system. 
+				VMs are less portable as they need a compatible hypervisor to run.
+
+3. Security:               Containers provide less isolation, as they share the host operating system.                               
+				VMs provide a higher level of security as each VM has its own operating system and can be isolated from the host and other VMs.
+
+
+ What is Docker ?
+	Docker is a containerization platform that provides easy way to containerize your applications,
+	which means, using Docker you can build container images, run the images to create containers 
+	and also push these containers to container regestries such as DockerHub, Quay.io and so on.
+
+ Docker Components:-
+  Docker daemon:-
+   	The Docker daemon (dockerd) listens for Docker API requests and manages Docker objects such as images, containers, networks, and volumes.
+	A daemon can also communicate with other daemons to manage Docker services.
+        Docker daemon basically responsible for executing the actions.
+ 
+  Docker registries:-
+	 A Docker registry stores Docker images. Docker Hub is a public registry that anyone can use, and Docker is configured to look for images on Docker Hub 
+         by default. You can even run your own private registry.
+ 
+  Dockerfile:-
+	 Dockerfile is a file where you provide the steps to build your Docker Image.
+
+  Images:-
+	 An image is a read-only template with instructions for creating a Docker container.
+
+
+ Differnce :-
+	Containers						Virtual Machine
+ * Containers are very lightweight,	                  * VM's are very heavy because it uses 
+   because it does not holds full OS instead	            Guest OS
+   it uses Host OS.
+ * It requires some minimal dependency and	          * VM's require full dependencies, from this some application 
+   application libraries to run images(Shared libraries).   need not want all libraries(System libraries).
+
+
+ Docker life Cycle:-
+	* Creating a Dockerfile with a set of instructions or commands that defines the Docker Images.
+	* Docker Images act as a set of instructions to build a Docker Container.
+	* Dockerfile- Docker Image- Docker container.
+	
+ We get a Docker daemon after installing docker, Basically Docker daemon is responsible for executing the actions. There is a client(Docker build pull run)
+ (Docker cli commands) from these requests received by Docker Daemon where docker daemon is heart of the docker if daemon goes down whole docker is down
+ And it will execute the requests which we have sent.
+
+ Docker ADD vs Docker COPY:-
+	* Docker add is also used to copy files it also copies the files from the URL(ex:- To download the softwar or packages using wget or curl command).
+	* Docker copy is used to copy files from the host system into the container.
+
+ CMD vs Entrypoint in Docker:-
+	Basically both commands are used in Dockerfile to specify what command be run .
+
+ 		Entrypoint						CMD
+	* Entrypoint is the process that's executed		* CMD is default set of arguments that are supplied to 
+	  inside the container.				  	  Entrypoint process.
+	* Entrypoint can be changed using the --entrypoint flag * CMD is easily overridden by appending your own arguments to
+								  docker run command.
+ What are the Networking Types:-
+	* Bridge(Default N/w type).	* Overlay.
+	* Host.				* MacVlan.
+
+   * Bridge N/w:- It is a default network, in this there is a virtual ethernet is created using this a container can access our host n/w.
+                   Containers can communicate with each other on the same host.
+   * Overlay:-    It facilitates communication between containers accross multiple Docker hosts. Suitable for multi-host deployments.
+   * Host:-       Containers share the network namespace with the host. They do not get their own isolated network stack.
+   
+
+ Multi-stage Build in Docker:-
+	* Refers to the practice of defining multiple build stages within a single Dockerfile.
+	* It allows this by using multiple "FROM" statements in a single Dockerfile.
+	   This can helps in reducing the final size of our Docker imageby discarding build artifacts and dependencies. 
+ 
+ Distroless images in Docker:-
+	* Distroless images in Docker refer to container images that are designed to be minimal and contain only the necessary components to run a
+	   specific application, without including a full operating system or unnecessary tools. 
+	* Google introduced Distroless images as a way to improve security by reducing the attack surface and potential vulnerabilities associated with traditional base images.
+
+ Real time Challenges:- 
+	* Docker is a single daemon process, which can cause a single point of failure.
+	  if the docker daemon goes down for some reason all the applications are down.
+	* Docker daemon run on root user, which is a security threat, it can effect other applications or containers on the host.
+	* Resource Constraints:- If we running too many containers on single host this caan result in slow performance or crashes.
+
+ Steps to take to Secure Containers:-
+	* Using Distroless or Image with not too many packages for final images.
+	* Ensuring that the n/wing is configured properly.
+	* Using utilities like sync to scan our conatiner images.

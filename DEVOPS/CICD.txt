@@ -1,0 +1,28 @@
+CICD: Continous Integration Continous Deployment/Delivery:-
+	 CI/CD is a set of best practices, principles, and tools that aim to automate
+	 the process of integrating code changes and deploying applications to production 
+	 in a more efficient and reliable manner.
+
+
+ CICD comes into picture where-
+	Unit Testing, Static Code Analysis, Code Quality/ Vulnerability, Automation, Reports, 
+	 Deployment   stages are done automatically rather than doing manual.
+
+
+Explain the Cicd Process From a Project:-
+
+  * I used Version-Control(GitHub) as a source code repository and target platform is Kubernetes.
+  * Let say user(Developer) who tries to Code commit to Version control system Repository.
+  * And i used an Orchestrator Continous Integration Continous Delivery(CI/CD) like Jenkins.
+    The reason foor using Jenkins is, whenever a code commits into the github repository, 
+    Git webhook triggers the pipeline in our orchestrator (Webhook Connectivity)  it is a Continous Integration Part.
+  * As part of CI Jenkins, there are multiple stages:-
+	1) As part of the first stage, we will checkout the code(the code commit that the user had made).
+	2) and will build code along with unit test cases(used MAVEN in Building, and unit testing framework to unit test). 
+	3) Then we moved to code scanning(for scanning used Sonarqube repositroy for security / vulnerability).
+	4) Because the target platform is Kubernetes, I try to build Docker Image (for this we use Dockerfile in the Github Repository).
+	5) Once the image is build the next and important stage is image scaning(we will verify the image which is created Successfully or any vulnerability).
+	6) After Image is created the next step is to push image onto Image registry(Dockerhub).
+     For all these steps used Jenkins Declarative Pipeline.
+  * The next is to get the image onto Kubernetes platform,  using the same Jenkins pipeline updated the Git repository with the image that created in last stage (Image push).
+  *Using the Ansible(Configuration Managment tool) from updated repository , Deployed Image on to Kubernetes Cluster (Play with k8s, Minikube). 

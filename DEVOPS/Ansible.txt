@@ -1,0 +1,55 @@
+ANSIBLE:- Configuration Management
+	Ansible is an open-source automation tool that is used for configuration management,
+	 application deployment, task automation, and orchestration. It simplifies the process of
+	 managing and deploying software on multiple servers.
+    
+  Why Configuration Management(Ansible) :-
+	In Cloud Platform, If we have created 100 EC2-Instances(50- Amazon-Linux, 30-Centos, 20-Ubuntu)
+           If System Adminstrator or someone says to upgrade something for specific servers say to Ubuntu, rather than doing
+	   manually for each instances we can do this by using Ansible(host) by configuring the remote servers(Ubuntu) using IP ADDRESS.
+
+  * Ansible uses Python Programming language.
+
+Purpose Of Ansible:-
+	* Configuration Management.
+	* Application Deployment.
+	* Task Automation.
+
+Advantages:-
+	* Agentless.
+	* Declarative Language.
+	* Scalability.
+	* Integration with other Tools.
+
+Steps to Configure Targer-server from Ansible Server:-
+* Create 2 or more Ec2-Instances(1 for Ansible, rest all for target)
+* Install Ansible on Ansible server
+* ssh-keygen - Click Enter 3 times,  (in this id_rsa, id_rsa.pub file created under (ls /home/ubuntu/.ssh/).
+* id_rsa:- is private key used for login to machine(should not share to anyone).
+* id_rsa.pub:- is publc key used for communicate with each machines.
+* Copy the id_rsa.pub content
+	* Open the Targeted Instance- and vi  /. ssh/authorized_keys
+	* Paste the Copied id_rsa.pub file content.
+* In Ansible server , ssh IpAddress of Targeted Instance. 
+
+Example to run a simple or single task:-
+ansible -m "shell" -a "ls"       if inventory file(/etc/ansible/hosts/) is in default location
+ansible -i inventory(file_name) all(group_name) -m "shell" -a "ls"       if we created inventory file
+
+
+Example to install NGINX:-
+---
+-  name: Install and Start nginx
+   hosts: all
+   become: root
+   tasks:
+     - name: Install Nginx
+    // shell: apt install nginx  (or)
+       apt:
+         name: nginx
+	 state: present
+     - name: Start Nginx
+    // shell: systemctl start nginx (or)
+       service:
+         name: nginx
+         state: started  
