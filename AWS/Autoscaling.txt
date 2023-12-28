@@ -1,0 +1,23 @@
+AutoScaling:-
+	Auto Scaling is the service or resource provided by AWS. we use Auto scalling when there is too much traffic to our Applications.
+	To scale the instances or containers we use Auto Scaling.
+	 * ex:- In Kubernetes, it uses AUto scaling, where is lots of traffic to our application to scale the pods according to the resource utilization.
+		where we can use HPA(Horizontal Pods AutoScaler) in Deployment stage , where we can give min and max replicas values to create.
+
+ DEMO:-
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: myapp-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: myapp-deployment
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      targetAverageUtilization: 80

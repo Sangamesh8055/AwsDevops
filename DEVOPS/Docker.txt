@@ -69,15 +69,37 @@ CONTAINER: DOCKER-
 	  inside the container.				  	  Entrypoint process.
 	* Entrypoint can be changed using the --entrypoint flag * CMD is easily overridden by appending your own arguments to
 								  docker run command.
+
+ Docker Network:-
+	 Docker networking allows containers to communicate with each other and outside world.
+	 Docker provides several networking features to make it easy to connect containers to one another and to the host machine.
+          when we want to communicate between host and contsianers or ping between then it occurs networking error, So to solve this problem Docker creates Virtualeth(Docker0) This called as Bridge N/wing.
+
  What are the Networking Types:-
 	* Bridge(Default N/w type).	* Overlay.
 	* Host.				* MacVlan.
 
    * Bridge N/w:- It is a default network, in this there is a virtual ethernet is created using this a container can access our host n/w.
                    Containers can communicate with each other on the same host.
+		 ex: to create defaukt bridge network
+		cmd:- docker run -d --name container-name image-name:tag
+
+		 ex:- to create custom network
+		cmd:- docker run -d --name container-name --network=custom-network-name image-name:tag
+
    * Overlay:-    It facilitates communication between containers accross multiple Docker hosts. Suitable for multi-host deployments.
+
    * Host:-       Containers share the network namespace with the host. They do not get their own isolated network stack.
-   
+		 ex:- to create host network
+		cmd:- docker run -d --name container-name --network=host image-name   
+
+ Docker Volumes:- 
+	* Mechanism in Docker that allows us to persist data outside the lifecycle of a container.
+	* Any changes made to the File system inside the container are lost when container is stopped or removed.
+	* To overcome this type of things Docker volumes is used eventhough containers are removed or stopped the docker volumes holds the data in it.
+	   And it can allow to share those data to another containers.
+	* Docker volumes provides an easy way to backup and restore data. Since data is stored outside the container, it can be backed easily.
+
 
  Multi-stage Build in Docker:-
 	* Refers to the practice of defining multiple build stages within a single Dockerfile.
