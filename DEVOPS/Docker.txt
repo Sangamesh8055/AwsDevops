@@ -99,7 +99,8 @@ CONTAINER: DOCKER-
 	* To overcome this type of things Docker volumes is used eventhough containers are removed or stopped the docker volumes holds the data in it.
 	   And it can allow to share those data to another containers.
 	* Docker volumes provides an easy way to backup and restore data. Since data is stored outside the container, it can be backed easily.
-
+   Types od Volumes:-
+	* Named Volumes      * Anonymous Volumes      * Bind Mounts
 
  Multi-stage Build in Docker:-
 	* Refers to the practice of defining multiple build stages within a single Dockerfile.
