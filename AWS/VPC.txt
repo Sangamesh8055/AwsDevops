@@ -4,57 +4,101 @@ VPC:- Virtual Private Cloud
 
 Why VPC is used:-
 	In initial days, Companies or like Start-ups maintain their own data-centers but it becoming to hectic (difficult) to maintain.
-	So AWS saw this opportunity, aws started building there own data-centers where companies or startup request its resources for that aws will get paid. Inside the Data-centers there are multiple physical servers where Company1 requests 10 instances in server1 and Company2 also requests 5 instances same as Company3 requests 1 instance, if the Company3 is not maintaining proper security, the hacker hacks the Company3 instance he can easily go inside other instances which are in the same server(server1).
-To solve the security breach comes up with security community in aws terms its called “VPC” .  
-Splitting the range of IP ADDRESS called “SUBNETS”
+	So AWS saw this opportunity, aws started building there own data-centers where companies or startup request its resources for that aws will get paid. 
+	Inside the Data-centers there are multiple physical servers where Company1 requests 10 instances in server1 and Company2 also requests 5 instances 
+	same as Company3 requests 1 instance, if the Company3 is not maintaining proper security, the hacker hacks the Company3 instance he can easily go 
+	inside other instances which are in the same server(server1).To solve the security breach comes up with security community in aws terms its called “VPC” .  
+	Splitting the range of IP ADDRESS called “SUBNETS”
 
  
 	Key features and components of AWS VPC include:
-1) Subnets: VPCs are divided into subnets, which are ranges of IP addresses within the VPC. You can create subnets to organize and secure your resources. Subnets can be public or private, depending on whether they have direct access to the internet.
-2) Internet Gateway: To allow instances in your VPC to communicate with the internet, you can attach an internet gateway to your VPC.
-3) Route Tables: Each subnet in a VPC must be associated with a route table, which controls the traffic leaving the subnet. You can define custom route tables to suit your network configuration.
-4) Security Groups and Network Access Control Lists (ACLs): Security groups and network ACLs provide security at both the instance and subnet levels. They control inbound and outbound traffic to and from your instances.
-5) Elastic Load Balancer (ELB): ELB can be used to distribute incoming traffic across multiple instances in your VPC, enhancing the availability and fault tolerance of your applications.
-6) Peering: VPC peering allows you to connect one VPC with another VPC through a direct network route. This enables you to route traffic between them using private IP addresses.
-7) Virtual Private Network (VPN) and Direct Connect: You can establish secure connections between your on-premises data centers and your VPC using VPN or AWS Direct Connect.
 
-Components:
+1) Subnets: VPCs are divided into subnets, which are ranges of IP addresses within the VPC. You can create subnets to organize and secure your resources. 
+		Subnets can be public or private, depending on whether they have direct access to the internet.
+
+2) Internet Gateway: To allow instances in your VPC to communicate with the internet, you can attach an internet gateway to your VPC.
+
+3) Route Tables: Each subnet in a VPC must be associated with a route table, which controls the traffic leaving the subnet. 
+		You can define custom route tables to suit your network configuration.
+
+4) Security Groups and Network Access Control Lists (ACLs): Security groups and network ACLs provide security at both the instance and subnet levels. 
+		They control inbound and outbound traffic to and from your instances.
+
+5) Elastic Load Balancer (ELB): ELB can be used to distribute incoming traffic across multiple instances in your VPC, 
+		enhancing the availability and fault tolerance of your applications.
+
+6) Peering: VPC peering allows you to connect one VPC with another VPC through a direct network route. 
+		This enables you to route traffic between them using private IP addresses.
+
+7) Virtual Private Network (VPN) and Direct Connect: You can establish secure connections between your on-premises data centers and your VPC using VPN 
+		or AWS Direct Connect.
+
+
+	Components:
+
 1)VPC (Virtual Private Cloud): The overarching term that refers to the virtual network dedicated to an AWS account.
+
 2)Subnet: A range of IP addresses in your VPC. Subnets can be either public or private, based on their accessibility to the internet.
+
 3)Internet Gateway: A component that allows communication between instances in your VPC and the internet.
+
 4)Route Table: A set of rules, called routes, that are used to determine where network traffic is directed.
+
 5)CIDR Block: Classless Inter-Domain Routing block, representing a range of IP addresses in the VPC.
+
 6)Security Group: Acts as a virtual firewall for your instances to control inbound and outbound traffic.
+
 7) Network ACL (Access Control List): An optional layer of security that acts as a firewall for controlling traffic at the subnet level.
+
 8) Elastic Load Balancer (ELB): Distributes incoming application traffic across multiple instances, improving availability and fault tolerance.
+
 9) Peering: The connection of one VPC to another, allowing instances in the connected VPCs to communicate with each other.
+
 10)VPN (Virtual Private Network): A secure way to connect a VPC to an on-premises data center or another VPC over the internet.
+
 11)Direct Connect: A dedicated network connection from your on-premises data center to AWS.
-12)NAT Gateway (Network Address Translation): Allows instances in a private subnet to initiate outbound traffic to the internet while preventing incoming traffic from reaching them.
+
+12)NAT Gateway (Network Address Translation): Allows instances in a private subnet to initiate outbound traffic to the internet 
+	while preventing incoming traffic from reaching them.
+
 13VPC Endpoint: Enables private connectivity to services such as Amazon S3 or DynamoDB from within a VPC, without using an internet gateway, VPN, or Direct Connect.
+
 14)VPC Flow Logs: Captures information about the IP traffic going to and from network interfaces in your VPC.
+
 15)Customer Gateway: Represents a physical device or software application on your side of the VPN connection.
+
 16)Virtual Private Gateway: Represents the VPN connection on the AWS side.
+
 17)Route Propagation: The automatic updating of route tables in response to changes in the associated subnets.
+
 18)DHCP Option Set: Specifies custom Domain Name System (DNS) servers and NTP servers for your VPC.
 
-Real-World Example: The Digital Neighborhood
+
+
+	Real-World Example: The Digital Neighborhood
+
 1)Your Digital Home (VPC):
-Your digital home is your VPC. It's like your own private piece of land on the internet. You get to decide the layout, the rules, and who's allowed in.
+	Your digital home is your VPC. It's like your own private piece of land on the internet. You get to decide the layout, the rules, and who's allowed in.
+
 2)Your Address (IP Address):
-Your home has an address, just like an IP address in a VPC. It's unique to you, and it helps others find you on the internet.
+	Your home has an address, just like an IP address in a VPC. It's unique to you, and it helps others find you on the internet.
+
 3)Rooms in Your House (Subnets):
-Inside your home, you have different rooms for different purposes. In your VPC, these are called subnets. For example, you might have a living room (public subnet) for everyone to access and a bedroom (private subnet) that's more secure and private.
+	Inside your home, you have different rooms for different purposes. In your VPC, these are called subnets. For example, you might have a living room (public subnet) for everyone to access and a bedroom (private subnet) that's more secure and private.
+
 4)Your Security System (Security Groups and ACLs):
-You have a security system in your house to control who can come in and out. In your VPC, you use security groups and access control lists (ACLs) to decide who and what can communicate with your digital resources.
+	You have a security system in your house to control who can come in and out. In your VPC, you use security groups and access control lists (ACLs) to decide who and what can communicate with your digital resources.
+
 5)Internet Access (Internet Gateway):
-If you want to access the outside world, you use a door (Internet Gateway) to go in and out. It's like having a front door to your digital home.
+	If you want to access the outside world, you use a door (Internet Gateway) to go in and out. It's like having a front door to your digital home.
+
 6)Inviting Guests (Elastic Load Balancer):
-Sometimes, you have friends over. An Elastic Load Balancer (ELB) is like a friendly but smart greeter who directs incoming guests (internet traffic) to different parts of your house (instances) to keep things running smoothly.
+	Sometimes, you have friends over. An Elastic Load Balancer (ELB) is like a friendly but smart greeter who directs incoming guests (internet traffic) to different parts of your house (instances) to keep things running smoothly.
 
 7)Private Conversations (VPC Peering):
-Your neighbors might have their own homes. VPC peering is like having a secret tunnel (private connection) between your homes, allowing you to chat without going through the public street (internet).
+	Your neighbors might have their own homes. VPC peering is like having a secret tunnel (private connection) between your homes, allowing you to chat without going through the public street (internet).
+
 8)Security Cameras (Monitoring and Logging):
-You have security cameras in and around your house to monitor activities. Similarly, AWS provides tools for monitoring and logging to keep an eye on what's happening in your VPC.
+	You have security cameras in and around your house to monitor activities. Similarly, AWS provides tools for monitoring and logging to keep an eye on what's happening in your VPC.
 
 

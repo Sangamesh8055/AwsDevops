@@ -1,7 +1,8 @@
 AWS STORAGE:-
 	referes to the cloud storage services provided by AWS.
-These services offer scalable, durable, and secure storage solutions for businesses and individuals,from simple file storage to complex data analytics and
-machine learning workloads
+These services offer scalable, durable, and secure storage solutions for businesses and individuals,from simple file storage to complex data 
+analytics and machine learning workloads
+
    Some AWS Storage Services:-
 	1) Amazon Elastic Block Store  (Volume).
 		ex: Hosting OS, Databases, Low Latency data access.

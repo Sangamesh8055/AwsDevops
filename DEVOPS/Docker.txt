@@ -14,7 +14,8 @@ CONTAINER: DOCKER-
 				VMs are less portable as they need a compatible hypervisor to run.
 
 3. Security:               Containers provide less isolation, as they share the host operating system.                               
-				VMs provide a higher level of security as each VM has its own operating system and can be isolated from the host and other VMs.
+				VMs provide a higher level of security as each VM has its own operating system and can be isolated 
+				from the host and other VMs.
 
 
  What is Docker ?
@@ -24,13 +25,13 @@ CONTAINER: DOCKER-
 
  Docker Components:-
   Docker daemon:-
-   	The Docker daemon (dockerd) listens for Docker API requests and manages Docker objects such as images, containers, networks, and volumes.
-	A daemon can also communicate with other daemons to manage Docker services.
+   	The Docker daemon (dockerd) listens for Docker API requests and manages Docker objects such as images, containers, 
+	networks, and volumes. A daemon can also communicate with other daemons to manage Docker services.
         Docker daemon basically responsible for executing the actions.
  
   Docker registries:-
-	 A Docker registry stores Docker images. Docker Hub is a public registry that anyone can use, and Docker is configured to look for images on Docker Hub 
-         by default. You can even run your own private registry.
+	 A Docker registry stores Docker images. Docker Hub is a public registry that anyone can use, and Docker is configured 
+	 to look for images on Docker Hub by default. You can even run your own private registry.
  
   Dockerfile:-
 	 Dockerfile is a file where you provide the steps to build your Docker Image.
@@ -53,12 +54,13 @@ CONTAINER: DOCKER-
 	* Docker Images act as a set of instructions to build a Docker Container.
 	* Dockerfile- Docker Image- Docker container.
 	
- We get a Docker daemon after installing docker, Basically Docker daemon is responsible for executing the actions. There is a client(Docker build pull run)
- (Docker cli commands) from these requests received by Docker Daemon where docker daemon is heart of the docker if daemon goes down whole docker is down
- And it will execute the requests which we have sent.
+ 	We get a Docker daemon after installing docker, Basically Docker daemon is responsible for executing the actions. 
+	There is a client(Docker build pull run) (Docker cli commands) from these requests received by Docker Daemon where 
+	docker daemon is heart of the docker if daemon goes down whole docker is down And it will execute the requests which we have sent.
 
  Docker ADD vs Docker COPY:-
-	* Docker add is also used to copy files it also copies the files from the URL(ex:- To download the softwar or packages using wget or curl command).
+	* Docker add is also used to copy files it also copies the files from the URL
+	         (ex:- To download the softwar or packages using wget or curl command).
 	* Docker copy is used to copy files from the host system into the container.
 
  CMD vs Entrypoint in Docker:-
@@ -73,7 +75,8 @@ CONTAINER: DOCKER-
  Docker Network:-
 	 Docker networking allows containers to communicate with each other and outside world.
 	 Docker provides several networking features to make it easy to connect containers to one another and to the host machine.
-          when we want to communicate between host and contsianers or ping between then it occurs networking error, So to solve this problem Docker creates Virtualeth(Docker0) This called as Bridge N/wing.
+          when we want to communicate between host and contsianers or ping between then it occurs networking error, 
+	  So to solve this problem Docker creates Virtualeth(Docker0) This called as Bridge N/wing.
 
  What are the Networking Types:-
 	* Bridge(Default N/w type).	* Overlay.
@@ -110,7 +113,8 @@ CONTAINER: DOCKER-
  Distroless images in Docker:-
 	* Distroless images in Docker refer to container images that are designed to be minimal and contain only the necessary components to run a
 	   specific application, without including a full operating system or unnecessary tools. 
-	* Google introduced Distroless images as a way to improve security by reducing the attack surface and potential vulnerabilities associated with traditional base images.
+	* Google introduced Distroless images as a way to improve security by reducing the attack surface and potential vulnerabilities 
+	   associated with traditional base images.
 
  Real time Challenges:- 
 	* Docker is a single daemon process, which can cause a single point of failure.

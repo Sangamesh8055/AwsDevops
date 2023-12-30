@@ -23,7 +23,7 @@ CLOUD TRIAL:-
 	* Create New Trial.
 		- Provide Name for Trial.
 		- Choose option to create s3 bucket for storing CloudTrial logs or Select existing bucket.
-		- nable log files encryption with AWS KMS.
+		- enable log files encryption with AWS KMS.
 		- Click " Create " to create the trial.
 		- Status should look "Logging".
 	* Set-up CloudWatch Alarms(Optional).

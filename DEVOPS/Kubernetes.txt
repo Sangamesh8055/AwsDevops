@@ -9,28 +9,86 @@ CONTAINER ORCHESTRATION:-
 
    Features:-
 	* Cluster Management- It manages clusters of machines(Nodes). These clusters provides infrastructure for running and deploying containerized application.
+	
 	* Scaling           - Refers to ability to adjust the number of running instances(replicas) of a application on demand. 
-	* Load Balancing    - To distribute incoming network traffic across multiple containers, container orchestration tools often include built-in load balancing mechanisms.
-	* Health Monitoring - If a container or service fails or becomes unhealthy, the orchestrator can take corrective actions, such as restarting the container on a healthy node.
-	* Rolling Updates and Rollbacks -  Container orchestration simplifies the process of updating applications by facilitating rolling updates, where new versions of containers are 
-					   gradually deployed while the old versions continue to run. If issues arise, rollbacks to previous versions can be performed.
+	
+	* Load Balancing    - To distribute incoming network traffic across multiple containers, container orchestration tools often include 
+				built-in load balancing mechanisms.
+	
+	* Health Monitoring - If a container or service fails or becomes unhealthy, the orchestrator can take corrective actions, 
+				such as restarting the container on a healthy node.
+	
+	* Rolling Updates and Rollbacks -  Container orchestration simplifies the process of updating applications by facilitating rolling updates, 
+				where new versions of containers are gradually deployed while the old versions continue to run. 
+				If issues arise, rollbacks to previous versions can be performed.
+	
+	* Auto healing      - When container is killed by some reasons, App is not accesible by user. So Kubernetes is comes up with a feature called Auto Healing.
+
 
   KUBERNETES:-
 	Kubernetes is an open-source container orchestration platform designed to automate the deployment, scaling, and management of containerized applications. 
 
-  Features:-
+
+  Components:-
 	* Containers:-    Kubernetes leverages container technology. Because containers are ephemeral(short life).
+
 	* Pods:-          The basic building block of kubernetes is pods, which is the smallest and simplest unit.
 			   (In Pods there can be multiple Containers).
+
 	* Deployments:-   Deployments are higher level abstraction in kubernetes that enable declarative updates to application.
 			   They manage deployment and scaling of Pods.
+
 	* Services:-      Kubernetes Services provide a stable endpoint (IP address and DNS name) for a set of Pods.
 			   They enable load balancing and discovery within the cluster, allowing applications to communicate with each other.
+
 	* Nodes:-         A Kubernetes cluster consists of a set of nodes (physical or virtual machines) that run containerized applications. 
 			   Nodes are managed by the control plane and host the workloads.
+
 	* Control Plane:- The control plane is the brain of the Kubernetes cluster, responsible for managing and controlling the cluster's state. 
 			   It includes components like the API server, etcd (distributed key-value store), scheduler, and controller manager.
+
 	* Namespace:-     Namespaces provide a way to divide cluster resources into virtual clusters. 
+
 	* Ingress:-       Ingress controllers provide HTTP and HTTPS routing to services within the cluster. 
 			   They enable external access to applications and allow for the configuration of rules for routing traffic.
+
 	* Kubelet:-        The Kubelet is an agent that runs on each node in the cluster and is responsible for ensuring that containers are running in a Pod.
+
+
+  Difference b/w Kubernetes and Containers:-
+
+		Kubernetes				Docker
+
+	* Container Orchestration Tool.	      	    * Containerization Tool.
+	* Group of Nodes(Master and Worker Nodes).  * Single Instances.			  
+	* Auto Healing(Replicas).		    * No Auto Healing.
+	* Auto Scaling(HPA).	         	    * No Auto Scaling.
+	* Load Balancer.			    * No Load Balancer.
+
+
+  Kubernetes Architecture:-
+
+	* Control Plane(Master Node):- The control plane is responsible for making global decisions about the cluster (e.g., scheduling), as well as 
+				detecting and responding to cluster events (e.g., starting up a new pod when a deployment's replicas field is unsatisfied). 
+				Api Server, Etcd, Scheduler, Control Manager.
+
+	* Api Server:-  Serves as the entry point for the Kubernetes cluster. It exposes the Kubernetes API, which clients (such as kubectl) 
+				use to interact with the cluster.
+	
+	* Controller Manager:-  Manages controller processes that regulate the state of the cluster. Examples include the Replication Controller, 
+				Endpoint Controller, and Node Controller.
+	
+	* Scheduler:-  Assigns work to nodes based on resource availability and constraints. It decides where to deploy new containers based on factors 
+				such as resource requirements.
+	
+	* Etcd:- Consistent and highly-available key-value store used as Kubernetes' backing store for all cluster data. 
+				It stores configuration data that represents the state of the cluster at any given time.
+
+	* Data Plane(Worker Node)   :- The data plane is responsible for handling the actual containerized application workloads and the network traffic between them. 
+
+		Kubelet, Kube Proxy, Container Runtime.  
+		* Kubelet:- It is a component which is responsile for running our application, pods.
+			    If those or not running it should send request to the one of the componet in Master Node(Api server -Control manager - Scheduler).
+		* Kubeproxy:- It is a component where it is responsible for maintaining the network rules on node.
+				like specifing Network, Ip address, Load balancing.
+		* Container Runtime:- It is responsible for running the container(ex:- dockerd, dockershim).
