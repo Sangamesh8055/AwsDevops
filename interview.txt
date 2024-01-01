@@ -1,0 +1,119 @@
+1). Tell me about yourself and projects that you have worked on:-
+    As i am a fresher i keen interset in Devops and done some multiple projects on kubernetes, docker and cicd.
+
+2). Cpu utilization , memory status:-  top
+
+3). Checking memory status:-  free
+
+4). running proccess:- ps
+
+5). cronjob:- is a scheduled task in unix like os. it allows us to automate ripitetive tasks by specifying when and how 
+
+6). Dns  How does it work:-
+      DNS is a system that translates human readable domain names like example.com into ip address like 192.168.1.1 that computers use to identify each other on the network.
+
+7). tcp udp
+     tcp provides a reliable, connection oriented communication with error checking and retransmission of loss dat.
+     udp is connectionless, faster and used when some packet loss is acceptable.
+     tcp use cases:- file transfer, web browsing, emails.
+     udp use cases:- real-time video streaming, online gaming.
+
+8). layers of osi model
+   - physical   - data link   - network    - transport   - session   - presentation   - application
+
+9). Firewall:- 
+     is a network security device or software that monitors and controls incoming and outgoing network
+     traffic based on predefined security rules.
+
+10). ping command:- used to test network connectivity by sending icmp echo request to target host.
+
+11). Git:- git is a distributed version control system used to track changes in source code during software development.
+       in devops, git is used for version control, collaboration and to automate code deployments through cicd pipelines.
+
+12). Workflow of how you push code from our local machine:-
+     git add [files]   :  stage changes for commit.
+     git commit -m "Message"  : Create a commit with some message.
+     git push -u origin master  : push changes to the remote repository.
+
+13). how to revert a commit that you made in your repository( to go bach previous commit stage):-
+     git log
+     (copy the hashcommit)
+     git revert hashcommit
+     git push -u origin master
+
+14). Vpc in cloud:- vpc is a virtual network dedicated to aws account. it allows us to define and launch aws resources like ec2 instances and databases.
+
+15). difference b/w public and private subnet:-
+     A public subnet is accessible directly from the internet,  while private subnet is not directly accessible
+     public access is for like web servers.
+     private access is for like databases because it stores sensitive information.
+
+16). CloudFormation:-
+     is a service provided by aws, which allows us to define and provision aws infrastructure as code(IAC).
+
+17).  Ansible vs Terraform:-
+      terraform is primarily used for infrastructure provisioning and management, while
+      ansible is a configuration management and automation tool.
+      Terraform focuses on desired state of infrastructure, while
+      ansible defines how to configue servers.
+
+18). What is playbook in ansible:-
+      A playbook is a yaml files that defines set of tasks and configurations that to be executed on the remote servers.
+
+19). What is state file in terraform:-
+     a terraform state file is used to keep track of the resources that terraform manages.
+
+20). Virtualization vs containerization:-
+     virtualization:- running multiple vm's on a single server, each with its own OS it is like having seprate houses with differnt families in single building.
+     Containerization:- running isolated application on a shared OS. it like having apartments in single building.
+
+21). what problem does docker solve:
+     Docker solves the problem of consistent, portale, and efficient application deployment by
+     packaging applications and their dependencies into containers, ensuring they run reliably accross different
+     environments and systems while maintaining security and scalability.
+
+22). what is dockerfile:
+     A dockerfile is a script that defines the steps to create a docker container image. it's used to automate containerization of an application, making it reproducibe and shareable.
+
+23). explain the workflow of how docker conatiner is created:-
+     - Dockerfile: create a Dockerfile with application instructions.
+     - Build image: use docker build command to buid an image fro Dockerfile.
+     - Run container: Run a container from the image using docker run command.
+     - Container: the container runs your applications , isolated and sself hosted.
+
+24). How do you manage multiple containers:-
+     I  used container orchestration tool like kubernetes to manage multiple containers, because it offers a wide range of features like
+     - Auto scaling
+     - Auto healing
+     - Load balancing
+
+25).  What is ci cd
+      - ci:- is a practice of automatically building and testing code changes frequently.
+      - cd:- is a automated process of deploying code to production after successful ci.
+
+26). explain staging, production and testing environment:-
+     - Development/Testing Environment:- where developers write and test code.
+     - Staging Environment:- Pre-production environment for final testing before live environment.
+     - Production Environment:- Live environment for end-users.
+
+27). How do you scale your application:-
+     Using Auto-scaling in AWS or kubernetes Horizontal Pod Autoscaling to dynamically adjust resources based on traffic.
+
+28). How do you rollback if something fails.
+     by using container orchestration tools to revert to the last state.
+
+29). Git merge vs git rebase:-
+     both are used to bring back the code changes from one branch to other branch 
+ 		Git Merge		         	   Git Rebase                        
+
+	* Merging point: Creates new commit that has     * Rewrite commit history by placing entire history of the feature               
+	  two parent commits: one from current branch      branch on top of the branch being rebased into.
+	  other is merged.
+
+	* Commit history: Preserves commit history of 	 * Results in a linear and cleaner history without multiple 
+	  both branches,resulting in a more linear         merge commits.
+          history.						   
+
+	* Commit IDs: maintain original commit IDs       * harder to track original history.
+	  which can be useful for tracking changes.
+
