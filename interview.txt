@@ -68,7 +68,7 @@
      Containerization:- running isolated application on a shared OS. it like having apartments in single building.
 
 21). what problem does docker solve:
-     Docker solves the problem of consistent, portale, and efficient application deployment by
+     Docker solves the problem of consistent, portable, and efficient application deployment by
      packaging applications and their dependencies into containers, ensuring they run reliably accross different
      environments and systems while maintaining security and scalability.
 
@@ -77,7 +77,7 @@
 
 23). explain the workflow of how docker conatiner is created:-
      - Dockerfile: create a Dockerfile with application instructions.
-     - Build image: use docker build command to buid an image fro Dockerfile.
+     - Build image: use docker build command to buid an image from Dockerfile.
      - Run container: Run a container from the image using docker run command.
      - Container: the container runs your applications , isolated and sself hosted.
 
@@ -117,3 +117,12 @@
 	* Commit IDs: maintain original commit IDs       * harder to track original history.
 	  which can be useful for tracking changes.
 
+30). Pods vs Containers
+		Containers					Pods
+	* A container is a leightweight,		* A pod is a smallest deployable unit in
+	  portable and executable software package.	  container orchestration systems.
+	
+	* Run on a single node.				* Run as a cluster.
+
+	* Managed by runtime environment like		* Managed by orchestration system tools
+	  containerd, docker.

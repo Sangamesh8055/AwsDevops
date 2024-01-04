@@ -2,6 +2,15 @@ CLOUD TRIAL:-
  It is a service provided by Amazon Web Services (AWS). AWS CloudTrail records and tracks API calls made on your AWS account,
    providing visibility into user activity, resource changes, and system events.
 
+
+  Advantages:-
+	* Visibility into Api calls.
+	* Security and Compliance.
+	* Log file integrity.
+	* Integrations with other aws services.
+	* Real time monitoring.
+
+
   Features Of CloutTrial:- 
 	* Multi Regional
 	* Event History

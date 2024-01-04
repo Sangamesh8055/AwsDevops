@@ -8,6 +8,45 @@ CICD: Continous Integration Continous Deployment/Delivery:-
 	Unit Testing, Static Code Analysis, Code Quality/ Vulnerability, Automation, Reports, 
 	 Deployment   stages are done automatically rather than doing manual.
 
+CICD is a way which makes as software faster, safer, efficient by automating the process like building, testing and deploying of the software.
+
+CI:-  Continuous Integration is a development practice where code changes from multiple contributors are automatically integrated into a shared repository
+	several times a day.
+	Key Aspects:-
+	* Automated Build.
+	* Automated Testing.
+	* Code Quality Check.
+	* Frequent Integration.
+	* Immediate Feedback.
+      Tools:- Jenkins
+
+CD:-  Continuous Deployment is an extension of CI, where code changes that pass automated tests are automatically deployed to production without manual intervention. 
+        Key Aspects:-
+	* Automated Deployment.( Kubernetes with ArgoCD).
+	* Rollbacks.(In Kubernetes).
+	* Continous Monitoring.( Prometheus with Grafana).
+
+STAGES:-
+1). Source stage:- 
+	Starting stage of the cicd pipeline, when any changes made to the code andpushed to the repository , the cicd pipeline will we triggered 
+	to go to the next stage (Build stage).
+2). Build stage:- 
+	Here build stgae is combined with dependencies and libraries to create a build that can be deployed in your platform but after build stage 
+	it will goto Test stage.
+3). Test stage:-
+	Here there are going to be automated tests to test your application code and vulnerabilities if any problems occurs we will resolves and if it is passed,
+	goes to next stage which is deploy stage.
+4). Deploy stage:-
+	Here our application deployed on a server using containerization or container orchestration platform after it has passed all the stages successfully.
+
+
+Benifits of using cicd:-
+* Quicker time to market.
+* Reduces manual work.
+* Higher Software quality.
+* Reduced risk.
+* Collaboration.
+ 
 
 Explain the Cicd Process From a Project:-
 

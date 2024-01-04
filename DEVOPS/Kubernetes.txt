@@ -92,3 +92,26 @@ CONTAINER ORCHESTRATION:-
 		* Kubeproxy:- It is a component where it is responsible for maintaining the network rules on node.
 				like specifing Network, Ip address, Load balancing.
 		* Container Runtime:- It is responsible for running the container(ex:- dockerd, dockershim).
+
+ Kubernetes Service:-
+	In kubernetes each Pods has its own IP address, and pods are destroyed frequently and another pods come in place of those who destroyed hence the IP address also changes frequently, So Kuberntes introduced the component called Service.
+	* In Service IP address of it is stable
+	* Provide Loadbalancing
+	
+  Types of Sevices:-
+	* Default type
+	* Loadbalancer
+	* NodePort 
+
+Security practices in Kubernetes:-
+1). Image Scanning:- After Building Image
+		Type of security issues -
+		* Code from untrusted registries.
+		* Vulnerablities in tools of OS or libraries.
+		* Eliminate unnecessary dependencies.
+2). Run as Non-Root User:- 
+		* Create a dedicated user and group
+		* Because root user as all the previligies
+3). Users and Permissions:- Using RBAC
+4) . ETCD:- Secretes and all other k8s configuration data stored in etcd to keep track of components(deployment, services etc).
+		* if attacker has access to etcd, they can bypass the API server.

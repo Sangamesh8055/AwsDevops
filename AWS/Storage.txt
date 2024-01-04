@@ -25,7 +25,7 @@ analytics and machine learning workloads
 		* Metadata driven(Attributes,Policy).
 	Use-Cases:-
 		* Object storage for Web Application : used to store videos, images files.
-		* Backup abd Archiving : S3 is well suited for long term storage and backuf of data.
+		* Backup abd Archiving : S3 is well suited for long term storage and backup of data.
 
   3) Amazon EFS:- The Storage which is shared between the multiple ec2-instances is called EFS.
 		* Shared File System = Hierarchical structure means one efs storage can  be used more than one instances.

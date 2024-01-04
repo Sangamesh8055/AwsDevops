@@ -56,12 +56,12 @@ Why VPC is used:-
 
 10)VPN (Virtual Private Network): A secure way to connect a VPC to an on-premises data center or another VPC over the internet.
 
-11)Direct Connect: A dedicated network connection from your on-premises data center to AWS.
+11) Direct Connect: A dedicated network connection from your on-premises data center to AWS.
 
-12)NAT Gateway (Network Address Translation): Allows instances in a private subnet to initiate outbound traffic to the internet 
+12) NAT Gateway (Network Address Translation): Allows instances in a private subnet to initiate outbound traffic to the internet 
 	while preventing incoming traffic from reaching them.
 
-13VPC Endpoint: Enables private connectivity to services such as Amazon S3 or DynamoDB from within a VPC, without using an internet gateway, VPN, or Direct Connect.
+13) VPC Endpoint: Enables private connectivity to services such as Amazon S3 or DynamoDB from within a VPC, without using an internet gateway, VPN, or Direct Connect.
 
 14)VPC Flow Logs: Captures information about the IP traffic going to and from network interfaces in your VPC.
 
