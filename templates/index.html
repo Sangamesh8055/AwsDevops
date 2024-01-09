@@ -4,6 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unit Conversion</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #009688;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #009688;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00796b;
+        }
+
+        p.result {
+            font-weight: bold;
+            color: #009688;
+        }
+    </style>
 </head>
 <body>
     <h1>Unit Conversion</h1>
@@ -15,19 +66,20 @@
         <select name="from_unit" required>
             <option value="miles">Miles</option>
             <option value="kilometers">Kilometers</option>
+            <!-- Add more options as needed -->
         </select>
         <br>
         <label for="to_unit">To unit:</label>
         <select name="to_unit" required>
             <option value="miles">Miles</option>
             <option value="kilometers">Kilometers</option>
+            <!-- Add more options as needed -->
         </select>
         <br>
         <button type="submit">Convert</button>
     </form>
     {% if result is defined %}
-        <p>Result: {{ result }}</p>
+        <p class="result">Result: {{ result }}</p>
     {% endif %}
 </body>
 </html>
-
