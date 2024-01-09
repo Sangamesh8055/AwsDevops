@@ -17,6 +17,10 @@ def convert():
         result = input_value * 1.60934
     elif from_unit == 'kilometers' and to_unit == 'miles':
         result = input_value / 1.60934
+    elif from_unit == 'pounds' and to_unit == 'kilograms':
+        result = input_value * 0.453592
+    elif from_unit == 'kilograms' and to_unit == 'pounds':
+        result = input_value / 0.453592
     else:
         result = input_value  # Default to the same value if units are not recognized
 
